@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gene-clusters/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/gene-clusters/static/js/main.649c06e9.chunk.js",
+    "main.js.map": "/gene-clusters/static/js/main.649c06e9.chunk.js.map",
+    "runtime-main.js": "/gene-clusters/static/js/runtime-main.a9c3a428.js",
+    "runtime-main.js.map": "/gene-clusters/static/js/runtime-main.a9c3a428.js.map",
+    "static/js/2.1e4c0556.chunk.js": "/gene-clusters/static/js/2.1e4c0556.chunk.js",
+    "static/js/2.1e4c0556.chunk.js.map": "/gene-clusters/static/js/2.1e4c0556.chunk.js.map",
+    "static/js/3.27444d68.chunk.js": "/gene-clusters/static/js/3.27444d68.chunk.js",
+    "static/js/3.27444d68.chunk.js.map": "/gene-clusters/static/js/3.27444d68.chunk.js.map",
+    "index.html": "/gene-clusters/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/gene-clusters/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.1e4c0556.chunk.js.LICENSE.txt": "/gene-clusters/static/js/2.1e4c0556.chunk.js.LICENSE.txt",
+    "static/media/mutationsFiltered.dae01ed9.csv": "/gene-clusters/static/media/mutationsFiltered.dae01ed9.csv"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9c3a428.js",
+    "static/js/2.1e4c0556.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.649c06e9.chunk.js"
+  ]
+}
