@@ -1,0 +1,20 @@
+symbol,variant_classification,sample_id,polyPhen,impact,t_depth,t_alt_count,drug,response,indication
+ISG15,Silent,TCGA-YC-A89H,,LOW,30,9,Cisplatin,Complete Response,TCGA-BLCA
+ISG15,Silent,TCGA-YC-A89H,,LOW,30,9,Gemcitabine,Complete Response,TCGA-BLCA
+TAS1R3,Missense_Mutation,TCGA-YC-A89H,benign(0.024),MODERATE,13,5,Cisplatin,Complete Response,TCGA-BLCA
+TAS1R3,Missense_Mutation,TCGA-YC-A89H,benign(0.024),MODERATE,13,5,Gemcitabine,Complete Response,TCGA-BLCA
+MIB2,Splice_Site,TCGA-YC-A89H,,HIGH,10,5,Cisplatin,Complete Response,TCGA-BLCA
+MIB2,Splice_Site,TCGA-YC-A89H,,HIGH,10,5,Gemcitabine,Complete Response,TCGA-BLCA
+GNB1,Silent,TCGA-YC-A89H,,LOW,26,9,Cisplatin,Complete Response,TCGA-BLCA
+GNB1,Silent,TCGA-YC-A89H,,LOW,26,9,Gemcitabine,Complete Response,TCGA-BLCA
+PLCH2,Silent,TCGA-YC-A89H,,LOW,74,26,Cisplatin,Complete Response,TCGA-BLCA
+FAM19A1,Missense_Mutation,TCGA-55-7574,possibly_damaging(0.887),MODERATE,61,8,Bevacizumab,Partial Response,TCGA-LUAD
+FAM19A1,Missense_Mutation,TCGA-55-7574,possibly_damaging(0.887),MODERATE,61,8,Topotecan,Partial Response,TCGA-LUAD
+EPHA3,Nonsense_Mutation,TCGA-55-7574,,HIGH,26,6,Bevacizumab,Partial Response,TCGA-LUAD
+EPHA3,Nonsense_Mutation,TCGA-55-7574,,HIGH,26,6,Topotecan,Partial Response,TCGA-LUAD
+GPR15,Missense_Mutation,TCGA-55-7574,probably_damaging(0.998),MODERATE,63,7,Bevacizumab,Partial Response,TCGA-LUAD
+GPR15,Missense_Mutation,TCGA-55-7574,probably_damaging(0.998),MODERATE,63,7,Topotecan,Partial Response,TCGA-LUAD
+SEMA5B,Missense_Mutation,TCGA-55-7574,probably_damaging(0.977),MODERATE,116,10,Bevacizumab,Partial Response,TCGA-LUAD
+SEMA5B,Missense_Mutation,TCGA-55-7574,probably_damaging(0.977),MODERATE,116,10,Topotecan,Partial Response,TCGA-LUAD
+CCDC37,Missense_Mutation,TCGA-55-7574,probably_damaging(1),MODERATE,99,6,Bevacizumab,Partial Response,TCGA-LUAD
+CCDC37,Missense_Mutation,TCGA-55-7574,probably_damaging(1),MODERATE,99,6,Topotecan,Partial Response,TCGA-LUAD

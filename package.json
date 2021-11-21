@@ -1,12 +1,23 @@
 {
+  "type": "module",
+  "proxy": "http://localhost:3033",
   "name": "gene-clusters",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tensorflow/tfjs": "^3.11.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^5.1.3",
+    "csvtojson": "^2.0.10",
+    "d3": "^7.1.1",
+    "d3-node": "^2.2.3",
+    "express-handlebars": "^6.0.1",
+    "gh-pages": "^3.2.3",
+    "mongodb": "^4.2.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
@@ -15,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
