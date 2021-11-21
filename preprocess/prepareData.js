@@ -10,7 +10,7 @@ async function main(isReal) {
     CSV_FILE = "mutationsFiltered.csv";
     suffix = "";
   } else {
-    CSV_FILE = "test.csv";
+    CSV_FILE = "./preprocess/test.csv";
     suffix = "Test";
   }
   const uri = "mongodb://localhost:27017";
