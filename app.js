@@ -11,6 +11,8 @@ import {
   getIndexByGene,
   getGeneByIndex,
   getMaxValue,
+  getMatrix,
+  getFlattened
 } from "./lib/handlers.js";
 
 const port = process.env.PORT || 3033;
@@ -48,6 +50,8 @@ connectToDB((err) => {
     app.get("/api/indexByGene", getIndexByGene);
     app.get("/api/geneByIndex", getGeneByIndex);
     app.get("/api/maxValue", getMaxValue);
+    app.get("/api/matrix", getMatrix);
+    app.get("/api/flattened", getFlattened);
 
     app.use((req, res) => {
       res.status(404);
