@@ -12,7 +12,7 @@ import {
   getGeneByIndex,
   getMaxValue,
   getMatrix,
-  getFlattened
+  getFlattened,
 } from "./lib/handlers.js";
 
 const port = process.env.PORT || 3033;
@@ -42,16 +42,16 @@ connectToDB((err) => {
       res.send(headers.join("\n"));
     });
 
-    app.get("/api/numberOfPatients", getNumberOfPatients);
-    app.get("/api/numberOfGenes", getNumberOfGenes);
-    app.get("/api/groupedByPatient", getGroupedByPatient);
-    app.get("/api/patientByIndex", getPatientByIndex);
-    app.get("/api/indexByPatient", getIndexByPatient);
-    app.get("/api/indexByGene", getIndexByGene);
-    app.get("/api/geneByIndex", getGeneByIndex);
-    app.get("/api/maxValue", getMaxValue);
-    app.get("/api/matrix", getMatrix);
-    app.get("/api/flattened", getFlattened);
+    app.get("/api/numberOfPatients", getNumberOfPatients());
+    app.get("/api/numberOfGenes", getNumberOfGenes());
+    app.get("/api/groupedByPatient", getGroupedByPatient());
+    app.get("/api/patientByIndex", getPatientByIndex());
+    app.get("/api/indexByPatient", getIndexByPatient());
+    app.get("/api/indexByGene", getIndexByGene());
+    app.get("/api/geneByIndex", getGeneByIndex());
+    app.get("/api/maxValue", getMaxValue());
+    app.get("/api/matrix", getMatrix());
+    app.get("/api/flattened", getFlattened());
 
     app.use((req, res) => {
       res.status(404);

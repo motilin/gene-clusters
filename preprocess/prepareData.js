@@ -36,7 +36,7 @@ async function main(isReal) {
 
     await groupByPatient();
     await buildIndex();
-    await buildMatrix();
+    // await buildMatrix();
     await flattenData();
   } catch (e) {
     console.log(e);
