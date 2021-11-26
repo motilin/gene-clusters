@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "proxy": "http://localhost:3033",
   "name": "gene-clusters",
   "version": "0.1.0",
@@ -9,7 +8,9 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.3",
+    "cluster-shared-memory": "^1.1.4",
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "d3": "^7.1.1",
@@ -26,6 +27,7 @@
     "react-fetch-streams": "^1.1.2",
     "react-scripts": "4.0.3",
     "react-streams": "^13.6.6",
+    "redis": "^4.0.0",
     "rxjs": "^7.4.0",
     "web-vitals": "^1.1.2"
   },

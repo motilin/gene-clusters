@@ -1,11 +1,14 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
+import ControlPanel from "./ControlPanel";
 import Heatmap from "./Heatmap";
 
 export default function App() {
+  const [stream, setStream] = useState(null);
   return (
     <>
-      <Heatmap />
+      <ControlPanel setStream={setStream} />
+      <Heatmap stream={stream} />
     </>
   );
 

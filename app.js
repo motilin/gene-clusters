@@ -1,28 +1,19 @@
-import express from "express";
-import cors from "cors";
-import { engine } from "express-handlebars";
-import {
-  connectToDB,
-  getNumberOfPatients,
-  getNumberOfGenes,
-  getGroupedByPatient,
-  getPatientByIndex,
-  getIndexByPatient,
-  getIndexByGene,
-  getGeneByIndex,
-  getMaxValue,
-  getMatrix,
-  getFlattened,
-} from "./lib/handlers.js";
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const hb = require("express-handlebars");
+const handlebars = require("handlebars");
+const handlers = require("./lib/handlers.js");
 
 const port = process.env.PORT || 3033;
 const app = express();
-app.engine("handlebars", engine());
+app.engine("handlebars", hb.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 app.disable("x-powered-by");
 
-connectToDB((err) => {
+handlers.connectToRedis();
+handlers.connectToDB((err) => {
   if (err) {
     app.use((err, req, res, next) => {
       console.log(err.message);
@@ -32,8 +23,9 @@ connectToDB((err) => {
   } else {
     app.use(express.static("build"));
     app.use("/api", cors());
-    app.get("/about", (req, res) => res.render("about"));
+    app.use(bodyParser.json({ extended: true }));
 
+    app.get("/about", (req, res) => res.render("about"));
     app.get("/headers", (req, res) => {
       res.type("text/plain");
       const headers = Object.entries(req.headers).map(
@@ -42,16 +34,17 @@ connectToDB((err) => {
       res.send(headers.join("\n"));
     });
 
-    app.get("/api/numberOfPatients", getNumberOfPatients());
-    app.get("/api/numberOfGenes", getNumberOfGenes());
-    app.get("/api/groupedByPatient", getGroupedByPatient());
-    app.get("/api/patientByIndex", getPatientByIndex());
-    app.get("/api/indexByPatient", getIndexByPatient());
-    app.get("/api/indexByGene", getIndexByGene());
-    app.get("/api/geneByIndex", getGeneByIndex());
-    app.get("/api/maxValue", getMaxValue());
-    app.get("/api/matrix", getMatrix());
-    app.get("/api/flattened", getFlattened());
+    app.get("/api/numberOfPatients", handlers.getNumberOfPatients());
+    app.get("/api/numberOfGenes", handlers.getNumberOfGenes());
+    app.get("/api/groupedByPatient", handlers.getGroupedByPatient());
+    app.get("/api/patientByIndex", handlers.getPatientByIndex());
+    app.get("/api/indexByPatient", handlers.getIndexByPatient());
+    app.get("/api/indexByGene", handlers.getIndexByGene());
+    app.get("/api/geneByIndex", handlers.getGeneByIndex());
+    app.get("/api/maxValue", handlers.getMaxValue());
+    app.get("/api/matrix", handlers.getMatrix());
+    app.get("/api/flattened", handlers.getFlattened());
+    app.post("/api/submit", handlers.submitForm);
 
     app.use((req, res) => {
       res.status(404);

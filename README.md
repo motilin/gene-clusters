@@ -2,4 +2,4 @@
 
 ### Requirements
 
-**Note: this code requires a running mongoDB server**
+**Note: this code requires a mongoDB server running**
