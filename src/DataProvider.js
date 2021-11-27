@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const DataContext = createContext();
 export const useData = () => useContext(DataContext);
+let redisClient;
 
 export default function DataProvider({ children }) {
   const [status, setStatus] = useState();
@@ -16,7 +17,7 @@ export default function DataProvider({ children }) {
   const getStream = async (entryPoint) => {
     const res = await fetch(entryPoint);
     setStatus(res.status);
-    return res.json()
+    return res.json();
   };
 
   const getGroupedByPatient = async () => {
@@ -69,6 +70,11 @@ export default function DataProvider({ children }) {
     return stream;
   };
 
+  const getCurrentPatient = async () => {
+    const json = await getMiniObj("currentPatient");
+    return parseInt(json);
+  };
+
   useEffect(() => {
     getNumberOfGenes();
   }, []);
@@ -89,6 +95,7 @@ export default function DataProvider({ children }) {
         getMaxValue,
         getMatrix,
         getFlattened,
+        getCurrentPatient,
       }}
     >
       {children}

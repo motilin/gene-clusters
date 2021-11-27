@@ -44,7 +44,9 @@ handlers.connectToDB((err) => {
     app.get("/api/maxValue", handlers.getMaxValue());
     app.get("/api/matrix", handlers.getMatrix());
     app.get("/api/flattened", handlers.getFlattened());
+    app.get("/api/currentPatient", handlers.getCurrentPatient());
     app.post("/api/submit", handlers.submitForm);
+    app.post("/api/cancel", handlers.cancelJobs);
 
     app.use((req, res) => {
       res.status(404);

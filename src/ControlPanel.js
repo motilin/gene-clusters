@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useData } from "./DataProvider";
 
 export default function ControlPanel({ setStream }) {
   const useInput = (initialValue) => {
@@ -9,7 +10,10 @@ export default function ControlPanel({ setStream }) {
     ];
   };
 
+  const [numberOfPatients, setNumberOfPatients] = useState(0);
+  const [patient, setPatient] = useState(0);
   const [drug, resetDrug] = useInput("Paclitaxel");
+  const { getCurrentPatient, getNumberOfPatients } = useData();
 
   const DrugSelector = () => {
     return (
@@ -39,6 +43,23 @@ export default function ControlPanel({ setStream }) {
     resetDrug();
   };
 
+  const cancelJob = (e) => {
+    e.preventDefault();
+    const headers = { "Content-Type": "application/json" };
+    const body = JSON.stringify({ cancel: "1" })
+    const requestOptions = {
+      method: "POST",
+      headers,
+      body,
+    };
+    fetch("/api/cancel", requestOptions)
+  };
+
+  useEffect(() => {
+    getNumberOfPatients().then((num) => setNumberOfPatients(num));
+    setInterval(() => getCurrentPatient().then((num) => setPatient(num)), 1000);
+  }, []);
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -46,6 +67,10 @@ export default function ControlPanel({ setStream }) {
         <button type="submit">Submit</button>
       </form>
       <button onClick={resetForm}>Reset</button>
+      <button onClick={cancelJob}>Cancel</button>
+      <div>
+        patient {patient} of {numberOfPatients}
+      </div>
     </div>
   );
 }
